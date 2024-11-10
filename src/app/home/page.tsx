@@ -17,7 +17,6 @@ const HomePage = async () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-items-center lg:min-h-screen px-6 md:px-16 lg:px-24 space-y-6 md:space-y-0 lg:h-screen pt-12 lg:pt-0 lg:-mt-10 pb-10 lg:pb-0">
-      {/* Kontainer Video */}
       <div className="relative w-full md:w-1/2 h-64 sm:h-80 md:h-[493px] overflow-hidden rounded-3xl">
         <MotionVideo
           className="w-full h-full object-cover"
