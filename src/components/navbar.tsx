@@ -47,12 +47,12 @@ export default function Navbar() {
             Services
           </span>
         </Link>
-        <Link href="#team" passHref>
+        <Link href="/teams" passHref>
           <span className="text-gray-700 hover:text-black cursor-pointer">
             Teams
           </span>
         </Link>
-        <Link href="#contact" passHref>
+        <Link href="/contact" passHref>
           <span className="text-gray-700 hover:text-black cursor-pointer">
             Contact
           </span>
@@ -64,22 +64,22 @@ export default function Navbar() {
 
       {menuOpen && (
         <nav className="md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-md flex flex-col items-center justify-center space-y-4 py-4 rounded-xl z-50 h-[30%] w-[90%] mx-auto my-6">
-          <Link href="#services" passHref>
+          <Link href="/about" passHref>
             <span className="text-gray-700 hover:text-black cursor-pointer">
               About Us
             </span>
           </Link>
-          <Link href="#services" passHref>
+          <Link href="/services" passHref>
             <span className="text-gray-700 hover:text-black cursor-pointer">
               Services
             </span>
           </Link>
-          <Link href="#team" passHref>
+          <Link href="/teams" passHref>
             <span className="text-gray-700 hover:text-black cursor-pointer">
               Team
             </span>
           </Link>
-          <Link href="#contact" passHref>
+          <Link href="/contact" passHref>
             <span className="text-gray-700 hover:text-black cursor-pointer">
               Contact
             </span>

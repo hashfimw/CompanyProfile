@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 mt-10 border-t border-gray-800 pt-6 flex flex-col lg:flex-row justify-between items-center lg:items-center space-y-4 lg:space-y-0">
+      <div className="container mx-auto px-4 mt-10 border-t w-[90%] lg:w-auto border-gray-800 pt-6 flex flex-col lg:flex-row justify-between items-center lg:items-center space-y-4 lg:space-y-0">
         <p className="text-[#2F3546] text-sm text-center lg:text-left">
           Part of Pulse Group &copy;2024 Pulse Advertising
           &nbsp;&nbsp;|&nbsp;&nbsp; Imprint &nbsp;&nbsp;|&nbsp;&nbsp; Privacy
