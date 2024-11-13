@@ -95,10 +95,11 @@ export default function ContentServices3({ index }: ContentServicesProps) {
 
       <div className="container hidden lg:block justify-center items-center max-w-2xl ">
         <Image
-          src="/chartpulse.png"
-          alt="Chart Pulse"
+          src="/paidsosial.png"
+          alt="paid sosial"
           width={550}
           height={550}
+          className="hover:scale-105"
         />
       </div>
     </div>

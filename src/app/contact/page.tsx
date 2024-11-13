@@ -11,28 +11,28 @@ export default function Contact() {
           <input
             type="text"
             placeholder="First name"
-            className="w-full p-3 border rounded-md bg-[#88B8E0] focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-3 border rounded-3xl bg-[#8391AA] focus:outline-none focus:ring-2 focus:ring-black text-center placeholder:text-gray-500"
           />
           <input
             type="text"
             placeholder="Last name"
-            className="w-full p-3 border rounded-md bg-[#88B8E0] focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-3 border rounded-3xl bg-[#8391AA] focus:outline-none focus:ring-2 focus:ring-black text-center placeholder:text-gray-500"
           />
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-3 border rounded-md bg-[#88B8E0] focus:outline-none focus:ring-2 focus:ring-black"
+            className="w-full p-3 border rounded-3xl bg-[#8391AA] focus:outline-none focus:ring-2 focus:ring-black text-center placeholder:text-gray-500"
           />
           <div className="flex space-x-4">
             <input
               type="text"
               placeholder="Company"
-              className="w-full p-3 border rounded-md bg-[#88B8E0] focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full p-3 border rounded-3xl bg-[#8391AA] focus:outline-none focus:ring-2 focus:ring-black text-center placeholder:text-gray-500"
             />
-            <select className="w-full p-3 border rounded-md bg-[#88B8E0] focus:outline-none focus:ring-2 focus:ring-black">
-              <option value="">Country</option>
-              <option value="">English</option>
-              <option value="">Papua Nugigi</option>
+            <select className="w-full p-3 border rounded-3xl bg-[#8391AA] focus:outline-none focus:ring-2 focus:ring-black text-center placeholder:text-gray-500">
+              <option >Country</option>
+              <option  label="English"></option>
+              <option  label="Papua Nugigi"></option>
             </select>
           </div>
           <div className="space-y-2">
@@ -52,7 +52,7 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="w-full py-3 text-white bg-black rounded-md hover:bg-gray-800 focus:outline-none"
+            className="w-full py-3 text-white font-medium bg-[#88B8E0] rounded-3xl hover:bg-gray-700 focus:outline-none"
           >
             Send
           </button>

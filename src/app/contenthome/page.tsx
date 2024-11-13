@@ -1,7 +1,7 @@
 import { MotionText, textVariants } from "@/components/motion";
 import Link from "next/link";
 
-import TestimonialSection from "./testimonial/page";
+import TestimonialSection from "../../components/testimonial";
 import { getPulseMed } from "@/libs/pulsemedia";
 import Image from "next/image";
 

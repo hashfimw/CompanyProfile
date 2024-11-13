@@ -16,7 +16,7 @@ export const textVariants = {
 
 export const textVariants2 = {
   hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 1.2 } },
+    visible: { opacity: 1, transition: { duration: 1.5 } },
   };
  
  export const textVariants3 ={

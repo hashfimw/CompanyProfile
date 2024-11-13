@@ -59,12 +59,13 @@ export default function ContentServices4({ index }: ContentServicesProps) {
 
   return (
     <div className="container flex flex-col md:flex-row items-start justify-center py-20 space-y-8 md:space-y-0 md:space-x-12">
-      <div className="container hidden lg:block justify-center items-center max-w-2xl ">
+      <div className="container hidden lg:block justify-center items-center max-w-2xl justify-items-center pt-14 mr-16 ">
         <Image
-          src="/chartpulse.png"
+          src="/sosial.jpg"
           alt="Chart Pulse"
           width={550}
           height={550}
+          className="object-cover rounded-3xl border border-blue-300"
         />
       </div>
       <div className="flex flex-col max-w-xl space-y-6">

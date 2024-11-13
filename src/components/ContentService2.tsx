@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getPulseText } from "@/libs/pulsetext";
 import { IPulseText } from "@/types/text";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Image from "next/image";
+
 import ExpandableSection from "@/components/ExpandableSection";
 
 interface ContentServicesProps {
@@ -59,15 +59,16 @@ export default function ContentServices2({ index }: ContentServicesProps) {
 
   return (
     <div className="container flex flex-col md:flex-row items-start justify-center py-20 space-y-8 md:space-y-0 md:space-x-12">
-      <div className="container hidden lg:block justify-center items-center max-w-2xl ">
-        <Image
-          src="/chartpulse.png"
-          alt="Chart Pulse"
-          width={550}
-          height={550}
+      <div className="container hidden lg:block justify-center items-center max-w-2xl mr-16">
+        <video
+          src="/telekom.mp4"
+          className="w-[400px] h-[620px] object-cover  rounded-full "
+          autoPlay
+          loop
+          muted
         />
       </div>
-      <div className="flex flex-col max-w-xl space-y-6">
+      <div className="flex flex-col max-w-xl space-y-6 lg:pt-14">
         <h1 className="text-4xl font-bold text-black">{titleMain}</h1>
         <h1 className="italic text-2xl text-gray-600">
           {documentToReactComponents(childTitle)}

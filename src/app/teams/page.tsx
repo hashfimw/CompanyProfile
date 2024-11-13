@@ -1,5 +1,8 @@
 "use client";
+import CenteredTextWithBackground from "@/components/contentfullimage";
 import Loading from "@/components/loading";
+import { MotionText, textVariants2 } from "@/components/motion";
+import { div } from "framer-motion/client";
 import { useState, useEffect } from "react";
 
 // Define the Person interface to specify the structure of the fetched data
@@ -44,6 +47,14 @@ export default function Teams() {
   }
 
   return (
+    <div>
+    <MotionText 
+      initial="hidden"
+      animate="visible"
+      variants={textVariants2}
+    >
+    <CenteredTextWithBackground/>
+    </MotionText>
     <div className="py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
         <div className="max-w-xl">
@@ -80,6 +91,7 @@ export default function Teams() {
           ))}
         </ul>
       </div>
+    </div>
     </div>
   );
 }
