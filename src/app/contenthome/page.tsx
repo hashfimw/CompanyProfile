@@ -26,8 +26,8 @@ export default async function ContentHome() {
             </span>
           </h2>
         </MotionText>
-        <p className="mx-auto mt-2 max-w-lg text-balance text-center text-5xl font-semibold tracking-tight text-[#2F3546]sm:text-5xl pt-14">
-          What We <span className="text-[#66ace5]">Do?!</span>
+        <p className="mx-auto mt-2 max-w-lg text-balance text-center text-5xl font-semibold tracking-tight text-[#2F3546] sm:text-5xl pt-14">
+          What We Do ?
         </p>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           <div className="relative lg:row-span-2">
@@ -136,14 +136,14 @@ export default async function ContentHome() {
       </div>
       <div className="flex flex-row text-center py-6 justify-center">
         <Link
-          href={"/service"}
-          className="text-md  text-gray-900 bg-[#88B8E0] p-6 py-2 rounded-3xl hover:bg-[#8391AA] hover:text-white"
+          href={"/pulse-services"}
+          className="text-lg  text-gray-900 bg-[#88B8E0] p-6 py-2 rounded-3xl hover:bg-[#8391AA] hover:text-white"
         >
           Our Service
         </Link>
       </div>
-      <div className="flex items-center justify-center pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold">
-        What <span className="italic text-[#6eade1]">Our</span>  Partners Say
+      <div className="flex items-center justify-center pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#2F3546]">
+        What Our Partners Say
       </div>
 
       <TestimonialSection />

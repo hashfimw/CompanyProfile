@@ -30,12 +30,13 @@ export default function Navbar() {
         <button
           onClick={toggleMenu}
           className="text-gray-700 hover:text-black z-20"
+          aria-label="OpenMenu"
         >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
 
-      {/* Desktop Nav */}
+      
       <nav className="hidden md:flex items-center space-x-10 font-semibold">
         <Link href="/about" passHref>
           <span className="text-gray-700 hover:text-black cursor-pointer">

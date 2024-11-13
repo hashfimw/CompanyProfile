@@ -10,6 +10,18 @@ export const videoVariants = {
 };
 
 export const textVariants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+};
+
+export const textVariants2 = {
+  hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1.2 } },
+  };
+ 
+ export const textVariants3 ={
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0, transition: { duration: 1 } },
 };
+
+

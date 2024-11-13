@@ -1,4 +1,5 @@
 "use client";
+import Loading from "@/components/loading";
 import { useState, useEffect } from "react";
 
 // Define the Person interface to specify the structure of the fetched data
@@ -25,7 +26,7 @@ export default function Teams() {
       try {
         const response = await fetch("https://randomuser.me/api/?results=5");
         const data = await response.json();
-        setPeople(data.results); // data.results will now be typed as Person[]
+        setPeople(data.results); 
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -37,7 +38,9 @@ export default function Teams() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>
+      <Loading/>
+    </div>;
   }
 
   return (

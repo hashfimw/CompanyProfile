@@ -27,20 +27,20 @@ const ServicesTabs = () => {
   const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Refs for each content section
+
   const contentRef1 = useRef<HTMLDivElement>(null);
   const contentRef2 = useRef<HTMLDivElement>(null);
   const contentRef3 = useRef<HTMLDivElement>(null);
   const contentRef4 = useRef<HTMLDivElement>(null);
 
-  // Debounced function to calculate tab indicator position and width
+
   const updateIndicator = useCallback(() => {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
     const firstTab = tabsRef.current[0];
 
-    // Check if the first tab and container are available
+   
     if (!firstTab) return;
 
     const containerRect = container.getBoundingClientRect();
@@ -52,7 +52,6 @@ const ServicesTabs = () => {
     });
   }, []);
 
-  // Optimized hover calculation with requestAnimationFrame to avoid layout thrashing
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
 
@@ -62,7 +61,7 @@ const ServicesTabs = () => {
     const mouseX = e.clientX - containerRect.left;
     const tabIndex = Math.floor((mouseX / containerRect.width) * tabs.length);
 
-    // Use requestAnimationFrame to optimize layout calculation
+
     requestAnimationFrame(() => {
       const tab = tabsRef.current[tabIndex];
       if (tab) {
@@ -108,9 +107,9 @@ const ServicesTabs = () => {
         <p className="text-5xl text-gray-950 mt-2 mb-8">Services</p>
       </div>
 
-      {/* Tabs container */}
+      
       <div className="w-full max-w-5xl">
-        {/* Mobile view */}
+       
         <div className="flex flex-col space-y-4 md:hidden">
           {tabs.map((tab) => (
             <button
@@ -125,12 +124,12 @@ const ServicesTabs = () => {
           ))}
         </div>
 
-        {/* Desktop view with fixed height */}
+        
         <div
           ref={containerRef}
           className="relative hidden md:flex items-center justify-center h-[60px] w-auto rounded-full bg-[#8391AA] shadow-md overflow-hidden mt-16 px-2"
           style={{ minHeight: "60px" }}
-          onMouseMove={handleMouseMove} // Optimized mousemove handler
+          onMouseMove={handleMouseMove} 
         >
           <div
             className="absolute h-[80%] bg-[#88B8E0] p-4 rounded-full transition-all duration-300 shadow-lg md:mx-auto"
@@ -147,7 +146,7 @@ const ServicesTabs = () => {
                 tabsRef.current[index] = el;
               }}
               onMouseEnter={() => setHoveredTab(tab.id)}
-              onClick={() => handleTabClick(tab.id)} // Handle click to scroll
+              onClick={() => handleTabClick(tab.id)} 
               className={`relative z-10 flex-1 text-center py-3 px-4 text-md font-medium transition duration-300 text-lg ${
                 hoveredTab === tab.id
                   ? "text-zinc-900"
@@ -163,7 +162,6 @@ const ServicesTabs = () => {
       <div className="box h-40"></div>
       <div className="w-full max-w-7xl mt-20 border-t border-black"></div>
 
-      {/* Content Sections */}
       <div ref={contentRef1}>
         <ContentServices index={0} />
       </div>

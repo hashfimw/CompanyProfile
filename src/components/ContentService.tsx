@@ -7,6 +7,7 @@ import { IPulseText } from "@/types/text";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import ExpandableSection from "@/components/ExpandableSection";
+import Loading from "./loading";
 
 interface ContentServicesProps {
   index: number;
@@ -31,18 +32,18 @@ export default function ContentServices({ index }: ContentServicesProps) {
     })();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div><Loading/></div>;
   if (error) return <div>{error}</div>;
 
-  // Pastikan ada data sebelum mengakses fields
+ 
   if (!pulseText || pulseText.length <= index) {
     return <div>No content available</div>;
   }
 
-  // Pilih data sesuai index yang diberikan
+
   const contentData = pulseText[index]?.fields;
 
-  // Gunakan contentData untuk mengambil konten dinamis berdasarkan index
+
   const titleMain = contentData?.title || "Social Media Consulting";
   const childTitle = contentData?.childtitle || "to make you win on market share.";
   const Content = contentData?.content || "We bring 10+ years of experience...";
