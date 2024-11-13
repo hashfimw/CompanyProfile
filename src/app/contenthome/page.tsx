@@ -27,7 +27,7 @@ export default async function ContentHome() {
           </h2>
         </MotionText>
         <p className="mx-auto mt-2 max-w-lg text-balance text-center text-5xl font-semibold tracking-tight text-[#2F3546]sm:text-5xl pt-14">
-          What We <span className="text-[#88B8E0]">Do?!</span>
+          What We <span className="text-[#66ace5]">Do?!</span>
         </p>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           <div className="relative lg:row-span-2">
@@ -37,7 +37,7 @@ export default async function ContentHome() {
                 <p className="mt-2 text-xl font-medium tracking-tight text-gray-950 max-lg:text-center">
                   Social Media Consulting
                 </p>
-                <p className="mt-2 max-w-lg text-md font-light text-gray-600 max-lg:text-center">
+                <p className="mt-2 max-w-lg text-md font-light text-gray-950 max-lg:text-center">
                   We bring 10+ year of experience, and help brands navigate
                   social media through workshops and strategic consulting.
                 </p>
@@ -113,7 +113,7 @@ export default async function ContentHome() {
                 <p className="mt-2 text-xl font-medium tracking-tight text-gray-950 max-lg:text-center">
                   Social Media Management
                 </p>
-                <p className="mt-2 max-w-lg text-md font-light text-gray-600 max-lg:text-center">
+                <p className="mt-2 max-w-lg text-md font-light text-gray-950 max-lg:text-center">
                   We manage social media accounts for brands, creating content
                   and turning their audience into loyal communities.
                 </p>
@@ -143,7 +143,7 @@ export default async function ContentHome() {
         </Link>
       </div>
       <div className="flex items-center justify-center pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold">
-        What <span className="italic text-[#88B8E0]">Our</span> Partners Say
+        What <span className="italic text-[#6eade1]">Our</span>  Partners Say
       </div>
 
       <TestimonialSection />

@@ -8,8 +8,11 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Image from "next/image";
 import ExpandableSection from "@/components/ExpandableSection";
 
+interface ContentServicesProps {
+  index: number;
+}
 
-export default function ContentServices() {
+export default function ContentServices({ index }: ContentServicesProps) {
   const [pulseText, setPulseText] = useState<IPulseText[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -20,7 +23,7 @@ export default function ContentServices() {
       try {
         const result = await getPulseText();
         setPulseText(result);
-      } catch {
+      } catch  {
         setError("Error fetching data.");
       } finally {
         setLoading(false);
@@ -31,13 +34,15 @@ export default function ContentServices() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
-  // Make sure there's data before accessing fields
-  if (!pulseText || pulseText.length === 0) {
+  // Pastikan ada data sebelum mengakses fields
+  if (!pulseText || pulseText.length <= index) {
     return <div>No content available</div>;
   }
 
-  const contentData = pulseText[0]?.fields;
+  // Pilih data sesuai index yang diberikan
+  const contentData = pulseText[index]?.fields;
 
+  // Gunakan contentData untuk mengambil konten dinamis berdasarkan index
   const titleMain = contentData?.title || "Social Media Consulting";
   const childTitle = contentData?.childtitle || "to make you win on market share.";
   const Content = contentData?.content || "We bring 10+ years of experience...";
@@ -55,7 +60,7 @@ export default function ContentServices() {
   return (
     <div className="container flex flex-col md:flex-row items-start justify-center py-20 space-y-8 md:space-y-0 md:space-x-12">
       <div className="flex flex-col max-w-xl space-y-6">
-        <h1 className="text-4xl font-bold text-black">{titleMain} </h1>
+        <h1 className="text-4xl font-bold text-black">{titleMain}</h1>
         <h1 className="italic text-2xl text-gray-600">
           {documentToReactComponents(childTitle)}
         </h1>

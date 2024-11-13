@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 // Define the Person interface to specify the structure of the fetched data
@@ -60,11 +59,9 @@ export default function Teams() {
           {people.map((person) => (
             <li key={person.login.uuid}>
               <div className="flex items-center gap-x-6">
-                <Image
+                <img
                   alt={person.name.first}
                   src={person.picture.medium}
-                  width={80}
-                  height={80}
                   className="h-16 w-16 rounded-full"
                 />
                 <div>

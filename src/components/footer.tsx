@@ -17,7 +17,7 @@ export default function Footer() {
               PULSE <span className="font-normal">ADVERTISING</span>
             </h1>
           </div>
-          <p className="text-black">
+          <p className="text-black font-normal">
             Get the latest <em>Influencer Marketing</em> news in your inbox
           </p>
           <div className="flex items-center bg-[#2F3546] rounded-full p-2 w-full max-w-xl">
@@ -26,35 +26,35 @@ export default function Footer() {
               placeholder="Email"
               className="bg-transparent text-gray-400 px-4 py-2 outline-none flex-grow"
             />
-            <button className="bg-[#88B8E0] text-black rounded-full p-2 flex items-center justify-center hover:bg-[#EDDED6]">
+            <button className="bg-[#88B8E0] text-black rounded-full p-2 flex items-center justify-center hover:bg-[#71b0e4]">
               ❤️
             </button>
           </div>
-          <p className="font-medium text-[#2F3546]">
+          <p className="font-normal text-black">
             hello@pulse-advertising.com
           </p>
         </div>
 
         <div className="lg:w-1/10 lg:flex flex-col items-end lg:items-start hidden">
           <h2 className="font-bold text-[#EDDED6] mb-6">Explore</h2>
-          <ul className="text-[#2F3546] space-y-2 text-center lg:text-left">
+          <ul className="text-black font-medium space-y-2 text-center lg:text-left">
             <li>
-              <a href="" className="hover:text-[#EDDED6]">
+              <a href="/about" className="hover:text-[#EDDED6]">
                 About
               </a>
             </li>
             <li>
-              <a href="" className="hover:text-[#EDDED6]">
+              <a href="/teams" className="hover:text-[#EDDED6]">
                 Teams
               </a>
             </li>
             <li>
-              <a href="" className="hover:text-[#EDDED6]">
+              <a href="/pulse-services" className="hover:text-[#EDDED6]">
                 Service
               </a>
             </li>
             <li>
-              <a href="" className="hover:text-[#EDDED6]">
+              <a href="/contact" className="hover:text-[#EDDED6]">
                 Contact
               </a>
             </li>
@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div className="lg:w-1/5 lg:flex flex-col items-start lg:items-start flex-shrink-0 hidden ">
           <h2 className="font-bold text-[#EDDED6] mb-6">Resources</h2>
-          <ul className="text-[#2F3546] space-y-2">
+          <ul className="text-black font-medium space-y-2">
             <li>
               <a href="#" className="hover:text-[#EDDED6]">
                 Industry reports
@@ -89,7 +89,7 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 mt-10 border-t w-[90%] lg:w-auto border-gray-800 pt-6 flex flex-col lg:flex-row justify-between items-center lg:items-center space-y-4 lg:space-y-0">
-        <p className="text-[#2F3546] text-sm text-center lg:text-left">
+        <p className="text-black text-sm text-center font-medium lg:text-left">
           Part of Pulse Group &copy;2024 Pulse Advertising
           &nbsp;&nbsp;|&nbsp;&nbsp; Imprint &nbsp;&nbsp;|&nbsp;&nbsp; Privacy
         </p>
@@ -97,25 +97,26 @@ export default function Footer() {
           <Link
             href="https://www.instagram.com/pulseadvertising/"
             target="_blank"
+            aria-label="Instagram"
           >
             <RiInstagramFill className="transform transition-transform duration-200 hover:scale-110" />
           </Link>
           <Link
             href="https://www.linkedin.com/company/pulseadvertising"
-            target="_blank"
+            target="_blank" aria-label="LinkedIn"
           >
             <RiLinkedinFill className="transform transition-transform duration-200 hover:scale-110" />
           </Link>
           <Link
             href="https://www.youtube.com/channel/UC7Y4uAGwY2KinoVUyaULdhw"
-            target="_blank"
+            target="_blank" aria-label="Youtube"
           >
             <FaYoutube className="transform transition-transform duration-200 hover:scale-110" />
           </Link>
-          <Link href="https://www.tiktok.com/@pulseadvertising" target="_blank">
+          <Link href="https://www.tiktok.com/@pulseadvertising" target="_blank" aria-label="Tiktok">
             <RiTiktokFill className="transform transition-transform duration-200 hover:scale-110" />
           </Link>
-          <Link href="mailto:hello@pulse-advertising.com" target="_blank">
+          <Link href="mailto:hello@pulse-advertising.com" target="_blank" aria-label="Mail">
             <IoMdMail className="transform transition-transform duration-200 hover:scale-110" />
           </Link>
         </div>

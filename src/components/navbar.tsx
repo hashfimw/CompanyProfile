@@ -19,7 +19,7 @@ export default function Navbar() {
           <Logo />
           <div className="flex flex-col">
             <span className="font-bold text-gray-800">PULSE</span>
-            <span className="text-sm font-semibold text-gray-500 tracking-wide">
+            <span className="text-sm font-bold text-gray-900 tracking-wide">
               ADVERTISING
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function Navbar() {
             About Us
           </span>
         </Link>
-        <Link href="/pulseservices" passHref>
+        <Link href="/pulse-services" passHref>
           <span className="text-gray-700 hover:text-black cursor-pointer">
             Services
           </span>
@@ -57,9 +57,9 @@ export default function Navbar() {
             Contact
           </span>
         </Link>
-        <button className="text-gray-700 hover:text-black">
+        <div className="text-gray-700 hover:text-black">
           <FiGlobe size={24} />
-        </button>
+        </div>
       </nav>
 
       {menuOpen && (

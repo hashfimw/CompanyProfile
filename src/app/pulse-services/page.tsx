@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import ContentServices from "../../components/ContentService";
 import ContentServices2 from "../../components/ContentService2";
-import ContentServices4 from "../../components/ContentService4";
 import ContentServices3 from "../../components/ContentService3";
+import ContentServices4 from "../../components/ContentService4";
 
 type Tab = {
   id: number;
@@ -19,10 +19,7 @@ const tabs: Tab[] = [
 
 const ServicesTabs = () => {
   const [hoveredTab, setHoveredTab] = useState(1);
-  const [indicatorStyle, setIndicatorStyle] = useState<{
-    left: number;
-    width: number;
-  }>({
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({
     left: 0,
     width: 0,
   });
@@ -36,40 +33,49 @@ const ServicesTabs = () => {
   const contentRef3 = useRef<HTMLDivElement>(null);
   const contentRef4 = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  // Debounced function to calculate tab indicator position and width
+  const updateIndicator = useCallback(() => {
+    if (!containerRef.current) return;
+
+    const container = containerRef.current;
     const firstTab = tabsRef.current[0];
-    if (firstTab && containerRef.current) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const { left, width } = firstTab.getBoundingClientRect();
-      setIndicatorStyle({
-        left: left - containerRect.left,
-        width: width,
-      });
-    }
+
+    // Check if the first tab and container are available
+    if (!firstTab) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const { left, width } = firstTab.getBoundingClientRect();
+
+    setIndicatorStyle({
+      left: left - containerRect.left,
+      width: width,
+    });
   }, []);
 
-  const updateIndicator = (e: React.MouseEvent) => {
+  // Optimized hover calculation with requestAnimationFrame to avoid layout thrashing
+  const handleMouseMove = (e: React.MouseEvent) => {
     if (!containerRef.current) return;
 
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
 
     const mouseX = e.clientX - containerRect.left;
-
     const tabIndex = Math.floor((mouseX / containerRect.width) * tabs.length);
 
-    const tab = tabsRef.current[tabIndex];
-    if (tab) {
-      const { left, width } = tab.getBoundingClientRect();
-      setIndicatorStyle({
-        left: left - containerRect.left,
-        width: width,
-      });
-      setHoveredTab(tabs[tabIndex].id);
-    }
+    // Use requestAnimationFrame to optimize layout calculation
+    requestAnimationFrame(() => {
+      const tab = tabsRef.current[tabIndex];
+      if (tab) {
+        const { left, width } = tab.getBoundingClientRect();
+        setIndicatorStyle({
+          left: left - containerRect.left,
+          width: width,
+        });
+        setHoveredTab(tabs[tabIndex].id);
+      }
+    });
   };
 
-  // Function to handle click and scroll to the respective content section
   const handleTabClick = (id: number) => {
     let targetRef = null;
 
@@ -91,13 +97,15 @@ const ServicesTabs = () => {
     }
   };
 
+  useEffect(() => {
+    updateIndicator();
+  }, [updateIndicator]);
+
   return (
     <div className="container mx-auto flex flex-col items-center min-h-screen p-8 py-20">
       <div className="text-center mb-8">
-        <h1 className="text-6xl font-bold text-[#2F3546]">
-          Influencer Marketing
-        </h1>
-        <p className="text-5xl text-gray-500 mt-2 mb-8">Services</p>
+        <h1 className="text-6xl font-bold text-zinc-900">Influencer Marketing</h1>
+        <p className="text-5xl text-gray-950 mt-2 mb-8">Services</p>
       </div>
 
       {/* Tabs container */}
@@ -109,9 +117,7 @@ const ServicesTabs = () => {
               key={tab.id}
               onClick={() => handleTabClick(tab.id)}
               className={`text-center py-4 rounded-full text-lg font-medium transition duration-300 md:hidden lg:block ${
-                hoveredTab === tab.id
-                  ? "bg-[#8391AA] text-[#2F3546]"
-                  : "bg-[#8391AA] text-[#2F3546]"
+                hoveredTab === tab.id ? "bg-[#8391AA] text-zinc-900" : "bg-[#8391AA] text-zinc-900"
               }`}
             >
               {tab.label}
@@ -119,14 +125,15 @@ const ServicesTabs = () => {
           ))}
         </div>
 
-        {/* Desktop view */}
+        {/* Desktop view with fixed height */}
         <div
           ref={containerRef}
           className="relative hidden md:flex items-center justify-center h-[60px] w-auto rounded-full bg-[#8391AA] shadow-md overflow-hidden mt-16 px-2"
-          onMouseMove={updateIndicator}
+          style={{ minHeight: "60px" }}
+          onMouseMove={handleMouseMove} // Optimized mousemove handler
         >
           <div
-            className="absolute h-[80%] w-[60%] bg-[#88B8E0] p-4 rounded-full transition-all duration-300 shadow-lg md:mx-auto"
+            className="absolute h-[80%] bg-[#88B8E0] p-4 rounded-full transition-all duration-300 shadow-lg md:mx-auto"
             style={{
               left: `${indicatorStyle.left}px`,
               width: `${indicatorStyle.width}px`,
@@ -141,10 +148,10 @@ const ServicesTabs = () => {
               }}
               onMouseEnter={() => setHoveredTab(tab.id)}
               onClick={() => handleTabClick(tab.id)} // Handle click to scroll
-              className={`relative z-10 flex-1 text-center py-3 px-4 text-md font-medium transition duration-300 ${
+              className={`relative z-10 flex-1 text-center py-3 px-4 text-md font-medium transition duration-300 text-lg ${
                 hoveredTab === tab.id
-                  ? "text-[#2F3546]"
-                  : "text-[#EDDED6] hover:text-white"
+                  ? "text-zinc-900"
+                  : "text-white hover:text-white"
               }`}
             >
               {tab.label}
@@ -158,11 +165,17 @@ const ServicesTabs = () => {
 
       {/* Content Sections */}
       <div ref={contentRef1}>
-        <ContentServices />
+        <ContentServices index={0} />
       </div>
-      <div ref={contentRef2}><ContentServices2 index={2}/></div>
-      <div ref={contentRef3}><ContentServices3 index={1}/></div>
-      <div ref={contentRef4}><ContentServices4 index={3}/></div>
+      <div ref={contentRef2}>
+        <ContentServices2 index={2} />
+      </div>
+      <div ref={contentRef3}>
+        <ContentServices3 index={1} />
+      </div>
+      <div ref={contentRef4}>
+        <ContentServices4 index={3} />
+      </div>
     </div>
   );
 };
