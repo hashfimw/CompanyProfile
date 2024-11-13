@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start space-y-8 lg:space-y-0">
         <div className="lg:w-1/3 space-y-4 flex-shrink-0">
           <div className="flex items-center space-x-2">
-            <Image src="/pulseblack.png" alt="pulselogo" className="h-12" width={52} height={70}/>
+            <Image src="/pulseblack.png" alt="pulselogo" width={52} height={70}/>
             <h1 className="text-black text-lg font-semibold">
               PULSE <span className="font-normal">ADVERTISING</span>
             </h1>
