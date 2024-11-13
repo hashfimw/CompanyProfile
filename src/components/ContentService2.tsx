@@ -61,7 +61,7 @@ export default function ContentServices2({ index }: ContentServicesProps) {
     <div className="container flex flex-col md:flex-row items-start justify-center py-20 space-y-8 md:space-y-0 md:space-x-12">
       <div className="container hidden lg:block justify-center items-center max-w-2xl mr-16">
         <video
-          src="/telekom.mp4"
+          src="https://www.pulse-advertising.com/wp-content/uploads/2021/04/Telekom-for-work-page.mp4"
           className="w-[400px] h-[620px] object-cover  rounded-full "
           autoPlay
           loop
