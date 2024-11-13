@@ -1,21 +1,36 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
-export default function Teams() {
-  const [people, setPeople] = useState<any[]>([]); // Untuk menyimpan data people
-  const [loading, setLoading] = useState<boolean>(true); // Untuk menampilkan loading state
+// Define the Person interface to specify the structure of the fetched data
+interface Person {
+  login: {
+    uuid: string;
+  };
+  name: {
+    first: string;
+    last: string;
+  };
+  picture: {
+    medium: string;
+  };
+  email: string;
+}
 
-  // Mengambil data dari API https://randomuser.me/
+export default function Teams() {
+  const [people, setPeople] = useState<Person[]>([]); // Use the Person type for the array
+  const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://randomuser.me/api/?results=5"); // Mengambil 5 user secara acak
+        const response = await fetch("https://randomuser.me/api/?results=5");
         const data = await response.json();
-        setPeople(data.results); // Menyimpan data yang didapatkan ke state people
+        setPeople(data.results); // data.results will now be typed as Person[]
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        setLoading(false); // Menandakan data telah diambil
+        setLoading(false);
       }
     };
 
@@ -23,7 +38,7 @@ export default function Teams() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // Menampilkan loading jika data masih dalam proses pengambilan
+    return <div>Loading...</div>;
   }
 
   return (
@@ -42,16 +57,20 @@ export default function Teams() {
           role="list"
           className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
         >
-          {people.map((person: any) => (
+          {people.map((person) => (
             <li key={person.login.uuid}>
               <div className="flex items-center gap-x-6">
-                <img
+                <Image
                   alt={person.name.first}
                   src={person.picture.medium}
+                  width={80}
+                  height={80}
                   className="h-16 w-16 rounded-full"
                 />
                 <div>
-                  <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">{`${person.name.first} ${person.name.last}`}</h3>
+                  <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
+                    {`${person.name.first} ${person.name.last}`}
+                  </h3>
                   <p className="text-sm/6 font-semibold text-indigo-600">
                     {person.email}
                   </p>

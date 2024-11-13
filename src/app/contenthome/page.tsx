@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import TestimonialSection from "./testimonial/page";
 import { getPulseMed } from "@/libs/pulsemedia";
+import Image from "next/image";
 
 export default async function ContentHome() {
   const pulseMedia = await getPulseMed();
@@ -69,10 +70,12 @@ export default async function ContentHome() {
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                <img
+                <Image
                   className="w-full max-lg:max-w-xs"
                   src="/soslike.png"
                   alt="likelogo"
+                  width={300}
+                  height={200}
                 />
               </div>
             </div>
@@ -92,9 +95,11 @@ export default async function ContentHome() {
                 </p>
               </div>
               <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                <img
+                <Image
                   className="w-full max-lg:max-w-xs"
                   src="/likeslogo3d.png"
+                  width={200}
+                  height={200}
                   alt="likelogo"
                 />
               </div>

@@ -5,7 +5,7 @@ export default function Contact() {
     <div className="container mx-auto overflow-hidden flex flex-col-1 justify-center py-24">
       <div className="w-full max-w-3xl p-8 space-y-6">
         <h1 className="text-6xl font-bold text-center pb-10">
-          Let's <span className="italic">talk!</span>
+          Lets <span className="italic">talk!</span>
         </h1>
         <form className="space-y-4">
           <input
