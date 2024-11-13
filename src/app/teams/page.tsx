@@ -2,7 +2,7 @@
 import CenteredTextWithBackground from "@/components/contentfullimage";
 import Loading from "@/components/loading";
 import { MotionText, textVariants2 } from "@/components/motion";
-import { div } from "framer-motion/client";
+
 import { useState, useEffect } from "react";
 
 // Define the Person interface to specify the structure of the fetched data
