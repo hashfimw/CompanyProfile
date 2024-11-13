@@ -1,4 +1,4 @@
-import { MotionText, MotionVideo, textVariants, textVariants2, textVariants3, videoVariants } from "@/components/motion";
+import { MotionText, textVariants, textVariants2, textVariants3} from "@/components/motion";
 import StatsSection from "@/components/statsSection";
 import React from "react";
 
