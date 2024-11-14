@@ -64,6 +64,7 @@ export default function ContentServices2({ index }: ContentServicesProps) {
           src="https://www.pulse-advertising.com/wp-content/uploads/2021/04/Telekom-for-work-page.mp4"
           className="w-[400px] h-[620px] object-cover  rounded-full "
           autoPlay
+          playsInline
           loop
           muted
         />

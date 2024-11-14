@@ -25,6 +25,7 @@ const HomePage = async () => {
           autoPlay
           loop
           muted
+          playsInline
           initial="hidden"
           animate="visible"
           variants={videoVariants}

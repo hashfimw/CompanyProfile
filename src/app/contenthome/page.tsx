@@ -48,6 +48,7 @@ export default async function ContentHome() {
                     className="size-full object-cover object-top"
                     src={videoUrl}
                     autoPlay
+                    playsInline
                     loop
                     muted
                   />
@@ -124,6 +125,7 @@ export default async function ContentHome() {
                     className="size-full object-cover object-top"
                     src={videoUrltwo}
                     autoPlay
+                    playsInline
                     loop
                     muted
                   />
