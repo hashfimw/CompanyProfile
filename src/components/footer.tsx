@@ -4,7 +4,6 @@ import { IoMdMail } from "react-icons/io";
 import { RiInstagramFill, RiLinkedinFill, RiTiktokFill } from "react-icons/ri";
 
 import React from "react";
-import Image from "next/image";
 import Logo from "./logo";
 
 export default function Footer() {
