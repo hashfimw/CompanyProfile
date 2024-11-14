@@ -16,7 +16,7 @@ export default async function ContentHome() {
   }
 
   return (
-    <div className="py-20 sm:py-28">
+    <div className="lg:py-20 sm:py-28 py-16">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <MotionText initial="hidden" animate="visible" variants={textVariants}>
           <h2 className="text-start text-6xl font-semibold text-[#2F3546] flex flex-col ">
@@ -142,7 +142,7 @@ export default async function ContentHome() {
           Our Service
         </Link>
       </div>
-      <div className="flex items-center justify-center pt-24 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#2F3546]">
+      <div className="flex items-center justify-center pt-20 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-[#2F3546]">
         What Our Partners Say
       </div>
 

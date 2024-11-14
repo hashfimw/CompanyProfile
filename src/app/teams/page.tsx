@@ -4,7 +4,6 @@ import Loading from "@/components/loading";
 import { MotionText, textVariants2 } from "@/components/motion";
 import { useState, useEffect } from "react";
 
-// Define the Person interface to specify the structure of the fetched data
 interface Person {
   login: {
     uuid: string;
@@ -20,7 +19,7 @@ interface Person {
 }
 
 export default function Teams() {
-  const [people, setPeople] = useState<Person[]>([]); // Use the Person type for the array
+  const [people, setPeople] = useState<Person[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -53,7 +52,6 @@ export default function Teams() {
         <CenteredTextWithBackground />
       </MotionText>
 
-      {/* Introduction section */}
       <div className="container py-12 sm:py-16 text-center mx-auto px-6">
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
         Our People, Our Passion
@@ -66,7 +64,7 @@ export default function Teams() {
         </p>
       </div>
 
-      {/* Team grid */}
+     
       <div className="py-10 sm:py-16 ">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <ul
@@ -84,7 +82,7 @@ export default function Teams() {
                   <h3 className="text-sm font-semibold text-gray-900">
                     {`${person.name.first} ${person.name.last}`}
                   </h3>
-                  {/* Email appears only on hover */}
+            
                   <p className="text-xs text-black opacity-15 group-hover:opacity-100 transition-opacity duration-300">
                     {person.email}
                   </p>

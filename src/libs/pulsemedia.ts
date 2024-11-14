@@ -6,18 +6,15 @@ const token = process.env.CONTENTFULL_TOKEN;
 
 export const getPulseMed = async () => {
   try {
-    // Memastikan environment variables tersedia
     if (!base_url || !spaceId || !token) {
       throw new Error("Environment variables are not set correctly.");
     }
 
-    // Melakukan fetch data dari Contentful API
     const res = await fetch(
       `${base_url}/spaces/${spaceId}/environments/master/entries?access_token=${token}&content_type=pulseWeb`,
       { next: { revalidate: 60 } }
     );
 
-    // Menangani status HTTP yang tidak berhasil
     if (!res.ok) {
       throw new Error(`Failed to fetch data: ${res.statusText}`);
     }

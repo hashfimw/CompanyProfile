@@ -16,8 +16,8 @@ const CenteredTextWithBackground = () => {
   }, []);
 
   return (
-    <div className="container mx-auto w-full h-screen flex items-center justify-center px-6 py-32 lg:py-0 lg:px-0 relative">
-      {/* Gambar */}
+    <div className="container mx-auto w-full h-screen flex items-center justify-center px-6 pt-32 lg:py-0 lg:px-0 relative">
+      
       <div className="relative w-full h-full">
         <Image
           src={isMobile ? "/teamspulsemob.jpg" : "/teampagetop.jpg"} 
@@ -29,10 +29,10 @@ const CenteredTextWithBackground = () => {
         />
       </div>
 
-      {/* Teks */}
+      
       <div
         className={`absolute text-center px-4 text-zinc-950 
-          ${isMobile ? 'top-4' : 'top-1/2 transform -translate-y-1/2'}`}
+          ${isMobile ? 'top-4' : 'top-auto '}`}
       >
         <h1 className="text-4xl md:text-6xl font-bold hover:scale-105 ">We give people</h1>
         <p className="text-xl md:text-2xl font-light italic mt-2 ">a sense of belonging.</p>
