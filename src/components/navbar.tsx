@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-4">
           <Logo />
           <div className="flex flex-col">
-            <span className="font-bold text-gray-800">PULSE</span>
+            <span className="font-bold text-gray-800">PALSE</span>
             <span className="text-sm font-bold text-gray-900 tracking-wide">
               ADVERTISING
             </span>
@@ -43,7 +43,7 @@ export default function Navbar() {
             About Us
           </span>
         </Link>
-        <Link href="/pulse-services" passHref>
+        <Link href="/palse-services" passHref>
           <span className="text-gray-700 hover:text-black cursor-pointer">
             Services
           </span>
@@ -64,28 +64,28 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <nav className="md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-md flex flex-col items-center justify-center space-y-4 py-4 rounded-xl z-50 h-[30%] w-[90%] mx-auto my-6">
+        <nav className="md:hidden absolute top-16 left-0 right-0 bg-[#f6ede8] border-t border-gray-200 shadow-md flex flex-col items-center justify-center space-y-4 py-4 rounded-xl z-50 h-[30%] w-[90%] mx-auto my-6">
           <Link href="/about" passHref>
-            <span className="text-gray-700 hover:text-black cursor-pointer">
+            <span className="text-gray-800 hover:text-black cursor-pointer">
               About Us
             </span>
           </Link>
-          <Link href="/services" passHref>
-            <span className="text-gray-700 hover:text-black cursor-pointer">
+          <Link href="/palse-services" passHref>
+            <span className="text-gray-800 hover:text-black cursor-pointer">
               Services
             </span>
           </Link>
           <Link href="/teams" passHref>
-            <span className="text-gray-700 hover:text-black cursor-pointer">
+            <span className="text-gray-800 hover:text-black cursor-pointer">
               Team
             </span>
           </Link>
           <Link href="/contact" passHref>
-            <span className="text-gray-700 hover:text-black cursor-pointer">
+            <span className="text-gray-800 hover:text-black cursor-pointer">
               Contact
             </span>
           </Link>
-          <button className="text-gray-700 hover:text-black hidden">
+          <button className="text-gray-800 hover:text-black hidden">
             <FiGlobe size={24} />
           </button>
         </nav>

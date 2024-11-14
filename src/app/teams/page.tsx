@@ -1,8 +1,7 @@
 "use client";
-import CenteredTextWithBackground from "@/components/contentfullimage";
+import CenteredTextWithBackground from "@/components/CenteredTextImage";
 import Loading from "@/components/loading";
 import { MotionText, textVariants2 } from "@/components/motion";
-
 import { useState, useEffect } from "react";
 
 // Define the Person interface to specify the structure of the fetched data
@@ -27,7 +26,7 @@ export default function Teams() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://randomuser.me/api/?results=5");
+        const response = await fetch("https://randomuser.me/api/?results=10");
         const data = await response.json();
         setPeople(data.results); 
       } catch (error) {
@@ -41,57 +40,60 @@ export default function Teams() {
   }, []);
 
   if (loading) {
-    return <div>
-      <Loading/>
-    </div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   return (
     <div>
-    <MotionText 
-      initial="hidden"
-      animate="visible"
-      variants={textVariants2}
-    >
-    <CenteredTextWithBackground/>
-    </MotionText>
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl gap-20 px-6 lg:px-8 xl:grid-cols-3">
-        <div className="max-w-xl">
-          <h2 className="text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-            Meet our leadership
-          </h2>
-          <p className="mt-6 text-lg/8 text-gray-600">
-            We’re a dynamic group of individuals who are passionate about what
-            we do and dedicated to delivering the best results for our clients.
-          </p>
-        </div>
-        <ul
-          role="list"
-          className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2"
-        >
-          {people.map((person) => (
-            <li key={person.login.uuid}>
-              <div className="flex items-center gap-x-6">
+      <MotionText initial="hidden" animate="visible" variants={textVariants2}>
+        <CenteredTextWithBackground />
+      </MotionText>
+
+      {/* Introduction section */}
+      <div className="container py-12 sm:py-16 text-center mx-auto px-6">
+        <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+        Our People, Our Passion
+        </h2>
+        <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
+        Behind every successful campaign is a team of talented, driven people. At Palse Advertising, 
+        we believe in harnessing creativity, insight, and innovation to produce powerful results. 
+        Meet the minds and personalities who make Pulse Advertising a leader in the industry, 
+        working tirelessly to elevate brands and drive success.
+        </p>
+      </div>
+
+      {/* Team grid */}
+      <div className="py-10 sm:py-16 ">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <ul
+            role="list"
+            className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 lg:pb-20"
+          >
+            {people.map((person) => (
+              <li key={person.login.uuid} className="flex flex-col items-center group">
                 <img
-                  alt={person.name.first}
+                  alt={`${person.name.first} ${person.name.last}`}
                   src={person.picture.medium}
-                  className="h-16 w-16 rounded-full"
+                  className="h-20 w-20 rounded-full border-2 border-gray-200 shadow-xl hover:scale-105"
                 />
-                <div>
-                  <h3 className="text-base/7 font-semibold tracking-tight text-gray-900">
+                <div className="text-center mt-2">
+                  <h3 className="text-sm font-semibold text-gray-900">
                     {`${person.name.first} ${person.name.last}`}
                   </h3>
-                  <p className="text-sm/6 font-semibold text-indigo-600">
+                  {/* Email appears only on hover */}
+                  <p className="text-xs text-black opacity-15 group-hover:opacity-100 transition-opacity duration-300">
                     {person.email}
                   </p>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

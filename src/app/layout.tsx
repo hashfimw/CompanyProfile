@@ -4,7 +4,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Pulse Advertising",
+  title: "Influencer Marketing Agency | Palse Advertising",
   description: "Marketing Agency",
 };
 

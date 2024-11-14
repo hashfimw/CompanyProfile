@@ -5,6 +5,7 @@ import { RiInstagramFill, RiLinkedinFill, RiTiktokFill } from "react-icons/ri";
 
 import React from "react";
 import Image from "next/image";
+import Logo from "./logo";
 
 export default function Footer() {
   return (
@@ -12,9 +13,9 @@ export default function Footer() {
       <div className="container mx-auto px-6 flex flex-col lg:flex-row justify-between items-center lg:items-start space-y-8 lg:space-y-0">
         <div className="lg:w-1/3 space-y-4 flex-shrink-0">
           <div className="flex items-center space-x-2">
-            <Image src="/pulseblack.png" alt="pulselogo" width={52} height={70}/>
+            <Logo/>
             <h1 className="text-black text-lg font-semibold">
-              PULSE <span className="font-normal">ADVERTISING</span>
+              PALSE <span className="font-normal">ADVERTISING</span>
             </h1>
           </div>
           <p className="text-black font-normal">
@@ -31,12 +32,12 @@ export default function Footer() {
             </button>
           </div>
           <p className="font-normal text-black">
-            hello@pulse-advertising.com
+            hello@palse-advertising.com
           </p>
         </div>
 
         <div className="lg:w-1/10 lg:flex flex-col items-end lg:items-start hidden">
-          <h2 className="font-bold text-[#EDDED6] mb-6">Explore</h2>
+          <h1 className="font-bold text-black mb-6">Explore</h1>
           <ul className="text-black font-medium space-y-2 text-center lg:text-left">
             <li>
               <a href="/about" className="hover:text-[#EDDED6]">
@@ -49,7 +50,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/pulse-services" className="hover:text-[#EDDED6]">
+              <a href="/palse-services" className="hover:text-[#EDDED6]">
                 Service
               </a>
             </li>
@@ -62,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div className="lg:w-1/5 lg:flex flex-col items-start lg:items-start flex-shrink-0 hidden ">
-          <h2 className="font-bold text-[#EDDED6] mb-6">Resources</h2>
+          <h1 className="font-bold text-black mb-6">Resources</h1>
           <ul className="text-black font-medium space-y-2">
             <li>
               <a href="#" className="hover:text-[#EDDED6]">
@@ -90,7 +91,7 @@ export default function Footer() {
 
       <div className="container mx-auto px-4 mt-10 border-t w-[90%] lg:w-auto border-gray-800 pt-6 flex flex-col lg:flex-row justify-between items-center lg:items-center space-y-4 lg:space-y-0">
         <p className="text-black text-sm text-center font-medium lg:text-left">
-          Part of Pulse Group &copy;2024 Pulse Advertising
+          Part of Pulse Group &copy;2024 Palse Advertising 
           &nbsp;&nbsp;|&nbsp;&nbsp; Imprint &nbsp;&nbsp;|&nbsp;&nbsp; Privacy
         </p>
         <div className="flex space-x-6 text-2xl text-[#2F3546]">

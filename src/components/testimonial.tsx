@@ -5,9 +5,9 @@ type TestimonialProps = {
 
 const Testimonial = ({ text, author }: TestimonialProps) => {
   return (
-    <div className="bg-[#8391AA] text-white p-6 rounded-xl shadow-md text-center max-w-xl mx-auto lg:hover:scale-105">
-      <p className="font-medium text-lg mb-4 justify-center">{text}</p>
-      <p className="font-bold justify-center text-xl">{author}</p>
+    <div className="bg-[#8391AA] text-zinc-800 p-6 rounded-3xl shadow-md text-center max-w-xl mx-auto lg:hover:scale-105">
+      <h1 className="font-medium text-md mb-4 justify-center">{text}</h1>
+      <h1 className="font-bold justify-center text-xl">{author}</h1>
     </div>
   );
 };

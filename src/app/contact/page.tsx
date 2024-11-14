@@ -29,11 +29,7 @@ export default function Contact() {
               placeholder="Company"
               className="w-full p-3 border rounded-3xl bg-[#8391AA] focus:outline-none focus:ring-2 focus:ring-black text-center placeholder:text-gray-500"
             />
-            <select className="w-full p-3 border rounded-3xl bg-[#8391AA] focus:outline-none focus:ring-2 focus:ring-black text-center placeholder:text-gray-500">
-              <option >Country</option>
-              <option  label="English"></option>
-              <option  label="Papua Nugigi"></option>
-            </select>
+        
           </div>
           <div className="space-y-2">
             <label className="flex items-center space-x-2">

@@ -101,6 +101,7 @@ export default function ContentServices({ index }: ContentServicesProps) {
           width={550}
           height={550}
           className="hover:scale-105"
+          priority={false}
         />
       </div>
     </div>

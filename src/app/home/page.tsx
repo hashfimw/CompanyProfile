@@ -5,6 +5,7 @@ import {
   videoVariants,
   textVariants,
 } from "@/components/motion";
+import Link from "next/link";
 
 const HomePage = async () => {
   const pulseData = await getPulseMed();
@@ -43,12 +44,13 @@ const HomePage = async () => {
           <br />
           <span className="font-bold text-[#2F3546]">But better.</span>
         </h1>
-        <p className="mt-4 text-[#2F3546] font-bold text-sm sm:text-base md:text-lg">
+        <p className="mt-4 text-[#2F3546] font-bold mb-10 text-sm sm:text-base md:text-lg">
           Global social & influencer marketing agency.
         </p>
-        <button className="mt-6 px-6 py-3 border-2 border-black rounded-full text-black font-bold text-md hover:bg-[#88B8E0] hover:text-white transition duration-300">
+        
+        <Link href="/about" className="mt-6 px-6 py-3 border-2 border-black rounded-full text-black font-bold text-lg hover:bg-[#88B8E0] hover:text-white transition duration-300" >
           Get in touch
-        </button>
+        </Link>
       </MotionText>
     </div>
   );

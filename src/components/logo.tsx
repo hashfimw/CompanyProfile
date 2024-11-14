@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <div className="flex items-center">
       <Image
-        src={"/pulseblack.png"}
+        src={"/palselogo.png"}
         alt="Pulse Advertising Logo"
         width={50}
         height={40}
