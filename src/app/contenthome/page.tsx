@@ -138,7 +138,7 @@ export default async function ContentHome() {
       </div>
       <div className="flex flex-row text-center py-6 justify-center">
         <Link
-          href={"/pulse-services"}
+          href={"/palse-services"}
           className="text-lg  text-gray-900 bg-[#88B8E0] p-6 py-2 rounded-3xl hover:bg-[#8391AA] hover:text-white"
         >
           Our Service
